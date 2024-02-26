@@ -1,0 +1,32 @@
+version: '3'
+
+networks:
+  local: {}
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: ./compose/frontend/Dockerfile
+    container_name: local_frontend
+    volumes:
+      - ./frontend:/app
+    env_file:
+      - ./compose/frontend/.env
+    ports:
+      - "3000:3000"
+    networks:
+      - local
+  backend:
+    build:
+      context: .
+      dockerfile: ./compose/backend/Dockerfile
+    container_name: local_backend
+    volumes:
+      - ./backend/:/app:z
+    env_file:
+      - ./compose/backend/.env
+    ports:
+      - "8000:8000"
+    networks:
+      - local

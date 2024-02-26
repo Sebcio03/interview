@@ -1,0 +1,32 @@
+.form {
+  width: 38em;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form input {
+  border: 1px solid black;
+  text-align: center;
+  width: 20em;
+}
+.form button {
+  margin: 14px 0;
+  width: 5em;
+}
+.form label span {
+  display: none;
+}
+.errorsContainer {
+  margin-top: 20px;
+  color: red;
+  text-align: center;
+}
+.errorsContainer ul {
+  list-style-type: none;
+}
+.formContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
